@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+
+	<!-- 编码过滤器 -->
+	<filter>
+		<filter-name>encodingFilter</filter-name>
+		<filter-class>cn.itcast.itcaststore.web.filter.EncodingFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>encodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<filter>
+		<filter-name>adminPrivilegeFilter</filter-name>
+		<filter-class>cn.itcast.itcaststore.web.filter.AdminPrivilegeFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>adminPrivilegeFilter</filter-name>
+		<url-pattern>/admin/*</url-pattern>
+	</filter-mapping>
+
+	
+	<servlet>
+		<servlet-name>LoginServlet</servlet-name>
+		<servlet-class>cn.itcast.itcaststore.web.servlet.client.LoginServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LoginServlet</servlet-name>
+		<url-pattern>/login</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>AddProductServlet</servlet-name>
+		<servlet-class>cn.itcast.itcaststore.web.servlet.managar.AddProductServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AddProductServlet</servlet-name>
+		<url-pattern>/addProduct</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>ListProductServlet</servlet-name>
+		<servlet-class>cn.itcast.itcaststore.web.servlet.managar.ListProductServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ListProductServlet</servlet-name>
+		<url-pattern>/listProduct</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>ShowProductByPageServlet</servlet-name>
+		<servlet-class>cn.itcast.itcaststore.web.servlet.client.ShowProductByPageServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ShowProductByPageServlet</servlet-name>
+		<url-pattern>/showProductByPage</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>FindProductByIdServlet</servlet-name>
+		<servlet-class>cn.itcast.itcaststore.web.servlet.client.FindProductByIdServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>FindProductByIdServlet</servlet-name>
+		<url-pattern>/findProductById</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>AddCartServlet</servlet-name>
+		<servlet-class>cn.itcast.itcaststore.web.servlet.client.AddCartServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AddCartServlet</servlet-name>
+		<url-pattern>/addCart</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>ChangeCartServlet</servlet-name>
+		<servlet-class>cn.itcast.itcaststore.web.servlet.client.ChangeCartServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ChangeCartServlet</servlet-name>
+		<url-pattern>/changeCart</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>LogoutServlet</servlet-name>
+		<servlet-class>cn.itcast.itcaststore.web.servlet.client.LogoutServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LogoutServlet</servlet-name>
+		<url-pattern>/logout</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>CreateOrderServlet</servlet-name>
+		<servlet-class>cn.itcast.itcaststore.web.servlet.client.CreateOrderServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CreateOrderServlet</servlet-name>
+		<url-pattern>/createOrder</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>FindOrderByUserServlet</servlet-name>
+		<servlet-class>cn.itcast.itcaststore.web.servlet.client.FindOrderByUserServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>FindOrderByUserServlet</servlet-name>
+		<url-pattern>/findOrderByUser</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>FindOrderByIdServlet</servlet-name>
+		<servlet-class>cn.itcast.itcaststore.web.servlet.client.FindOrderByIdServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>FindOrderByIdServlet</servlet-name>
+		<url-pattern>/findOrderById</url-pattern>
+	</servlet-mapping>	
+	
+	<servlet>
+		<servlet-name>FindOrdersServlet</servlet-name>
+		<servlet-class>cn.itcast.itcaststore.web.servlet.managar.FindOrdersServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>FindOrdersServlet</servlet-name>
+		<url-pattern>/findOrders</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>OnLinePayServlet</servlet-name>
+		<servlet-class>cn.itcast.itcaststore.web.servlet.client.OnLinePayServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>OnLinePayServlet</servlet-name>
+		<url-pattern>/onlinepay</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>PayServlet</servlet-name>
+		<servlet-class>cn.itcast.itcaststore.web.servlet.client.PayServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>PayServlet</servlet-name>
+		<url-pattern>/pay</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>CallBackServlet</servlet-name>
+		<servlet-class>cn.itcast.itcaststore.web.servlet.client.CallBackServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CallBackServlet</servlet-name>
+		<url-pattern>/callback</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>ChangeOrderStateServlet</servlet-name>
+		<servlet-class>cn.itcast.itcaststore.web.servlet.client.ChangeOrderStateServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ChangeOrderStateServlet</servlet-name>
+		<url-pattern>/orderstate</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>DownloadServlet</servlet-name>
+		<servlet-class>cn.itcast.itcaststore.web.servlet.managar.DownloadServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DownloadServlet</servlet-name>
+		<url-pattern>/download</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>FindProductByManyConditionServlet</servlet-name>
+		<servlet-class>cn.itcast.itcaststore.web.servlet.managar.FindProductByManyConditionServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>FindProductByManyConditionServlet</servlet-name>
+		<url-pattern>/findProductByManyCondition</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>EditProductServlet</servlet-name>
+		<servlet-class>cn.itcast.itcaststore.web.servlet.managar.EditProductServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>EditProductServlet</servlet-name>
+		<url-pattern>/editProduct</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>DeleteProductServlet</servlet-name>
+		<servlet-class>cn.itcast.itcaststore.web.servlet.managar.DeleteProductServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DeleteProductServlet</servlet-name>
+		<url-pattern>/deleteProduct</url-pattern>
+	</servlet-mapping>	
+	
+	<servlet>
+		<servlet-name>FindOrderByManyConditionServlet</servlet-name>
+		<servlet-class>cn.itcast.itcaststore.web.servlet.managar.FindOrderByManyConditionServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>FindOrderByManyConditionServlet</servlet-name>
+		<url-pattern>/findOrderByManyCondition</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>DelOrderByIdServlet</servlet-name>
+		<servlet-class>cn.itcast.itcaststore.web.servlet.client.DelOrderByIdServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DelOrderByIdServlet</servlet-name>
+		<url-pattern>/delOrderById</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>imageCode</servlet-name>
+		<servlet-class>cn.itcast.itcaststore.utils.CheckImageServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>imageCode</servlet-name>
+		<url-pattern>/imageCode</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>RegisterServlet</servlet-name>
+		<servlet-class>cn.itcast.itcaststore.web.servlet.client.RegisterServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>RegisterServlet</servlet-name>
+		<url-pattern>/register</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>ActiveUserServlet</servlet-name>
+		<servlet-class>cn.itcast.itcaststore.web.servlet.client.ActiveUserServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ActiveUserServlet</servlet-name>
+		<url-pattern>/activeUser</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>MyAccountServlet</servlet-name>
+		<servlet-class>cn.itcast.itcaststore.web.servlet.client.MyAccountServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>MyAccountServlet</servlet-name>
+		<url-pattern>/myAccount</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>ListNoticeServlet</servlet-name>
+		<servlet-class>cn.itcast.itcaststore.web.servlet.managar.ListNoticeServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ListNoticeServlet</servlet-name>
+		<url-pattern>/managar/ListNoticeServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+	<servlet-name>AddNoticeServlet</servlet-name>
+		<servlet-class>cn.itcast.itcaststore.web.servlet.managar.AddNoticeServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AddNoticeServlet</servlet-name>
+		<url-pattern>/managar/AddNoticeServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>UpdateNoticeServlet</servlet-name>
+		<servlet-class>cn.itcast.itcaststore.web.servlet.managar.UpdateNoticeServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UpdateNoticeServlet</servlet-name>
+		<url-pattern>/managar/UpdateNoticeServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>FindByIdNoticeServlet</servlet-name>
+		<servlet-class>cn.itcast.itcaststore.web.servlet.managar.FindByIdNoticeServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>FindByIdNoticeServlet</servlet-name>
+		<url-pattern>/managar/FindByIdNoticeServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>EditNoticeServlet</servlet-name>
+		<servlet-class>cn.itcast.itcaststore.web.servlet.managar.EditNoticeServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>EditNoticeServlet</servlet-name>
+		<url-pattern>/managar/EditNoticeServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>DeleteNoticeServlet</servlet-name>
+		<servlet-class>cn.itcast.itcaststore.web.servlet.managar.DeleteNoticeServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DeleteNoticeServlet</servlet-name>
+		<url-pattern>/managar/DeleteNoticeServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>MenuSearchServlet</servlet-name>
+		<servlet-class>cn.itcast.itcaststore.web.servlet.client.MenuSearchServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>MenuSearchServlet</servlet-name>
+		<url-pattern>/MenuSearchServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>ShowIndexServlet</servlet-name>
+		<servlet-class>cn.itcast.itcaststore.web.servlet.client.ShowIndexServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ShowIndexServlet</servlet-name>
+		<url-pattern>/ShowIndexServlet</url-pattern>
+	</servlet-mapping>
+	
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>
